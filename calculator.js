@@ -7,10 +7,10 @@ const multiply = (num1, num2) => num1 * num2;
 const divide = (num1, num2) => num2 === 0 ? "Cannot divide by zero" : num1 / num2;
 // Step 02: Create a Validation Function for Inputs
 function validateInputs(num1, num2) {
-    if ( typeof num1 !== 'number' || isNaN(num1) ) return "Both inputs must be numbers";
-    if ( typeof num2 !== 'number' || isNaN(num2) ) return "Both inputs must be numbers";
+    if ( typeof num1 === 'number' && !isNaN(num1) ) return null;
+    if ( typeof num2 === 'number' && !isNaN(num2) ) return null;
 
-    return null;
+    return "Both inputs must be numbers";
 }
 // Step 03: Create a Calculator Function to Combine the Above Functions
 function calculator(num1, num2, operation) {
@@ -33,7 +33,7 @@ function calculator(num1, num2, operation) {
 
 // Output:
 const num1 = 10;
-const num2 = 5;
+const num2 = 'a';    // 0, 'a'
 const operationList = ['add', 'subtract', 'multiply', 'divide'];
 const operation = operationList[0];
 
